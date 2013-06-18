@@ -186,6 +186,9 @@
 		268948C31761E1710045DC3D /* SubClassPensiun.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268948B71761E1710045DC3D /* SubClassPensiun.xib */; };
 		268DCD301761EB9D003D6721 /* pam-ipad-cycleoflife-bab7-page9-568x296.png in Resources */ = {isa = PBXBuildFile; fileRef = 268DCD2F1761EB9D003D6721 /* pam-ipad-cycleoflife-bab7-page9-568x296.png */; };
 		268DCD321761EC54003D6721 /* pam-ipad-cycleoflife-subcover-07.png in Resources */ = {isa = PBXBuildFile; fileRef = 268DCD311761EC54003D6721 /* pam-ipad-cycleoflife-subcover-07.png */; };
+		D0425208177070EB000C348B /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0425205177070EB000C348B /* JASidePanelController.m */; };
+		D0425209177070EB000C348B /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0425207177070EB000C348B /* UIViewController+JASidePanel.m */; };
+		D042520C17707267000C348B /* leftwindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D042520B17707267000C348B /* leftwindowViewController.m */; };
 		F1071D501740880B00DDEE18 /* pam-ipad-nasabah-fundfact-button-04-217x30.png in Resources */ = {isa = PBXBuildFile; fileRef = F1071D4F1740880B00DDEE18 /* pam-ipad-nasabah-fundfact-button-04-217x30.png */; };
 		F1071D521740884900DDEE18 /* pam-ipad-nasabah-unduhform-tabel-439x253.png in Resources */ = {isa = PBXBuildFile; fileRef = F1071D511740884900DDEE18 /* pam-ipad-nasabah-unduhform-tabel-439x253.png */; };
 		F1109BBE1720E726000B945D /* pam-ipad-login-06-392x304.png in Resources */ = {isa = PBXBuildFile; fileRef = F1109BBD1720E726000B945D /* pam-ipad-login-06-392x304.png */; };
@@ -726,6 +729,12 @@
 		268948B71761E1710045DC3D /* SubClassPensiun.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubClassPensiun.xib; sourceTree = "<group>"; };
 		268DCD2F1761EB9D003D6721 /* pam-ipad-cycleoflife-bab7-page9-568x296.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-cycleoflife-bab7-page9-568x296.png"; sourceTree = "<group>"; };
 		268DCD311761EC54003D6721 /* pam-ipad-cycleoflife-subcover-07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-cycleoflife-subcover-07.png"; sourceTree = "<group>"; };
+		D0425204177070EB000C348B /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		D0425205177070EB000C348B /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		D0425206177070EB000C348B /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		D0425207177070EB000C348B /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		D042520A17707267000C348B /* leftwindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftwindowViewController.h; sourceTree = "<group>"; };
+		D042520B17707267000C348B /* leftwindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftwindowViewController.m; sourceTree = "<group>"; };
 		F1071D4F1740880B00DDEE18 /* pam-ipad-nasabah-fundfact-button-04-217x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-nasabah-fundfact-button-04-217x30.png"; sourceTree = "<group>"; };
 		F1071D511740884900DDEE18 /* pam-ipad-nasabah-unduhform-tabel-439x253.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-nasabah-unduhform-tabel-439x253.png"; sourceTree = "<group>"; };
 		F1109BBD1720E726000B945D /* pam-ipad-login-06-392x304.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-login-06-392x304.png"; sourceTree = "<group>"; };
@@ -1388,6 +1397,17 @@
 			path = Pensiun;
 			sourceTree = "<group>";
 		};
+		D0425203177070EB000C348B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D0425204177070EB000C348B /* JASidePanelController.h */,
+				D0425205177070EB000C348B /* JASidePanelController.m */,
+				D0425206177070EB000C348B /* UIViewController+JASidePanel.h */,
+				D0425207177070EB000C348B /* UIViewController+JASidePanel.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		F11AF600172D010200693B2A /* CKCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1459,6 +1479,7 @@
 		F1668246171A570200C0D312 = {
 			isa = PBXGroup;
 			children = (
+				D0425203177070EB000C348B /* Source */,
 				F15D8BDF173642F700D2F903 /* ABCalendarPicker.bundle */,
 				F1A5D489172056530039F5B5 /* Classes */,
 				F1668290171A5A1100C0D312 /* Resources */,
@@ -1535,6 +1556,8 @@
 				F16990CC1749123800553DED /* Form.h */,
 				F16990CD1749123800553DED /* Form.m */,
 				F1668259171A570200C0D312 /* Supporting Files */,
+				D042520A17707267000C348B /* leftwindowViewController.h */,
+				D042520B17707267000C348B /* leftwindowViewController.m */,
 			);
 			path = "PAM-Guide";
 			sourceTree = "<group>";
@@ -2665,6 +2688,9 @@
 				263F4A6A1766DBF3002B3DE4 /* UIViewController+JTRevealSidebarV2.m in Sources */,
 				263F4A6B1766DBF3002B3DE4 /* UIViewController+MMDrawerController.m in Sources */,
 				263F4A6E1766DC56002B3DE4 /* SidebarViewController.m in Sources */,
+				D0425208177070EB000C348B /* JASidePanelController.m in Sources */,
+				D0425209177070EB000C348B /* UIViewController+JASidePanel.m in Sources */,
+				D042520C17707267000C348B /* leftwindowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

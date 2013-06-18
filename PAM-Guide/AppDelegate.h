@@ -11,7 +11,7 @@
 
 
 @class ViewController;
-
+@class JASidePanelController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     NSMutableString *fvalueGlobalString;
     NSString *fvalueString;
@@ -23,7 +23,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) JASidePanelController *viewControllers;
 @property (strong, nonatomic) ViewController *viewController;
 
 @property (strong, nonatomic) NSMutableString *fvalueGlobalString;

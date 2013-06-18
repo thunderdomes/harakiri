@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
-
+#import "JASidePanelController.h"
 #import "MainViewController.h"
+#import "leftwindowViewController.h"
 #define kObserver @"vcRadioButtonItemFromGroupSelected"
 
 
@@ -20,50 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        CGSize result = [[UIScreen mainScreen] bounds].size;
-        if(result.height == 480)
-        { self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone4" bundle:nil];
-        }
-        if(result.height == 568)
-        {
-            self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-//            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-//            self.window.rootViewController = navController;
-            
-            navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-            navigationController.navigationBarHidden = NO;
-            navigationController.navigationBar.tag = 42;
-            
-            self.window.rootViewController = navigationController;
-
-            
-            //[self.view addSubview:navigationController.view];
-
-
-        }
-    } else {
-        
+        self.viewControllers = [[JASidePanelController alloc] init];
+		
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
-        self.window.rootViewController = self.viewController;
-        
-    }
-    
-    // Create MainViewController instance
-    //MainViewController *mainViewController = [[MainViewController alloc] init];
-    
-    // Set mainViewController backgroud color
-	//mainViewController.view.backgroundColor = [UIColor lightGrayColor];
-	
-    
-    // Add mainViewController to window
-	//[self.window addSubview:mainViewController.view];
-    
-    
-    
+		self.viewControllers.centerPanel = self.viewController;
+	self.viewControllers.leftPanel=[[leftwindowViewController alloc]init];
+        self.window.rootViewController = self.viewControllers;
     [self.window makeKeyAndVisible];
+	self.viewControllers.leftFixedWidth = 275;
     return YES;
 }
 
