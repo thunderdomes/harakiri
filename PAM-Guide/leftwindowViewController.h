@@ -11,6 +11,8 @@
 @interface leftwindowViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
 	UITableView *leftMenu;
+	UIButton *pam_login_Nasabah;
+	UIButton *pam_login_mitra;
 	
 }
 @property (nonatomic, retain) NSArray *arrayOriginal;

@@ -174,6 +174,7 @@
 
 
 - (IBAction)openLogin:(id)sender{
+	NSLog(@"openLogin");
     
     self.subv = [[Login alloc]initWithNibName:@"Login" bundle:nil];
 //    CGRect r = [subv.view frame];
@@ -195,7 +196,7 @@
 
 
 - (IBAction)openLoginMitra:(id)sender{
-    
+    NSLog(@"openLoginMitra");
     self.subv = [[LoginMitra alloc]initWithNibName:@"LoginMitra" bundle:nil];
     //    CGRect r = [subv.view frame];
     //    r.origin.x = 300;
@@ -245,37 +246,10 @@
 #pragma mark JTRevealSidebarDelegate
 
 // This is an examle to configure your sidebar view through a custom UIViewController
-- (UIView *)viewForLeftSidebar {
-    // Use applicationViewFrame to get the correctly calculated view's frame
-    // for use as a reference to our sidebar's view
-    CGRect viewFrame = self.navigationController.applicationViewFrame;
-    UITableViewController *controller = self.leftSidebarViewController;
-    if ( ! controller) {
-        self.leftSidebarViewController = [[SidebarViewController alloc] init];
-        self.leftSidebarViewController.sidebarDelegate = self;
-        controller = self.leftSidebarViewController;
-        controller.title = @"Menu";
-    }
-    controller.view.frame = CGRectMake(0, viewFrame.origin.y, 270, viewFrame.size.height);
-    controller.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
-    return controller.view;
-}
+
 
 // This is an examle to configure your sidebar view without a UIViewController
-- (UIView *)viewForRightSidebar {
-    // Use applicationViewFrame to get the correctly calculated view's frame
-    // for use as a reference to our sidebar's view
-    CGRect viewFrame = self.navigationController.applicationViewFrame;
-    UITableView *view = self.rightSidebarView;
-    if ( ! view) {
-        view = self.rightSidebarView = [[UITableView alloc] initWithFrame:CGRectZero];
-        view.dataSource = self;
-        view.delegate   = self;
-    }
-    view.frame = CGRectMake(self.navigationController.view.frame.size.width - 270, viewFrame.origin.y, 270, viewFrame.size.height);
-    view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-    return view;
-}
+
 
 // Optional delegate methods for additional configuration after reveal state changed
 - (void)didChangeRevealedStateForViewController:(UIViewController *)viewController {
@@ -587,6 +561,8 @@
 
 
 -(IBAction)openCOF:(id)sender{
+	
+	NSLog(@"openCOF");
     
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
@@ -660,6 +636,7 @@
     else {
         self.subv = [[COFCoverMenu alloc]initWithNibName:@"COFCoverMenu" bundle:nil];
     }
+	
     
 //        switch ([(UIButton*)sender tag]){
 //            case 1:

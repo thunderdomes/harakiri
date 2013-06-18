@@ -7,6 +7,8 @@
 //
 
 #import "leftwindowViewController.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 
 @interface leftwindowViewController ()
 
@@ -20,12 +22,25 @@
     if (self) {
 		self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"pam-iphone5-bg-01-320x568"]];
 		
-		leftMenu=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, self.view.frame.size.height-300)];
+		leftMenu=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, self.view.frame.size.height-450)];
 		leftMenu.backgroundColor=[UIColor clearColor];
 		leftMenu.separatorColor=[UIColor colorWithRed:0 green:0.314 blue:0.357 alpha:1];
 		leftMenu.delegate=self;
 		leftMenu.dataSource=self;
 		[self.view addSubview:leftMenu];
+		
+		pam_login_Nasabah=[UIButton buttonWithType:UIButtonTypeCustom];
+		[pam_login_Nasabah setFrame:CGRectMake(50, leftMenu.frame.size.height+5, 223, 82)];
+		[pam_login_Nasabah addTarget:self action:@selector(nasabah) forControlEvents:UIControlEventTouchUpInside];
+		[pam_login_Nasabah setBackgroundImage:[UIImage imageNamed:@"pam-ipad-home-login-01-223x82"] forState:UIControlStateNormal];
+		[self.view addSubview:pam_login_Nasabah];
+		
+		pam_login_mitra=[UIButton buttonWithType:UIButtonTypeCustom];
+		[pam_login_mitra addTarget:self action:@selector(mitra) forControlEvents:UIControlEventTouchUpInside];
+		[pam_login_mitra setFrame:CGRectMake(50, leftMenu.frame.size.height+90, 223, 82)];
+		[pam_login_mitra setBackgroundImage:[UIImage imageNamed:@"pam-ipad-home-login-02-223x82"] forState:UIControlStateNormal];
+		[self.view addSubview:pam_login_mitra];
+		
 		
 		NSDictionary *dTmp= [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"leftWindow" ofType:@"plist"]];
 		self.arrayOriginal=[dTmp valueForKey:@"Object"];
@@ -35,6 +50,14 @@
         // Custom initialization
     }
     return self;
+}
+-(void)mitra{
+		[self.sidePanelController showCenterPanel:YES];
+
+}
+-(void)nasabah{
+		[self.sidePanelController showCenterPanel:YES];
+
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -56,7 +79,7 @@
 	label_top.font=[UIFont fontWithName:@"HelveticaNeue" size:30];
 	
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
-    headerView.backgroundColor = [UIColor clearColor];
+    headerView.backgroundColor = [UIColor colorWithRed:0.004 green:0.239 blue:0.271 alpha:1];
 	
 	[headerView addSubview:label_top];
     return headerView;
@@ -78,15 +101,24 @@
 	    cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 	
-    // Set up the cell...
 	NSString *cellValue = [[self.arForTable objectAtIndex:indexPath.row]objectForKey:@"name"];
 	cell.textLabel.text=cellValue;
+	cell.textLabel.textAlignment=NSTextAlignmentCenter;
+	cell.textLabel.textColor=[UIColor whiteColor];
+	cell.textLabel.font=[UIFont fontWithName:@"AvenirNext-Medium" size:20.0f];
     NSString * myTag;
     myTag = [[self.arForTable objectAtIndex:indexPath.row] objectForKey:@"tag"];
-    	//[self jumper:cellValue];
-	//[cell.contentRightImage setImage:[UIImage imageNamed:cellValue]];
+    switch ([myTag intValue]) {
+        case 0:
+          cell.textLabel.font=[UIFont fontWithName:@"AvenirNext-Medium" size:22.0f];
+            break;
+            
+        default:
+            break;
+    }
+
 	UIView *selectionColor = [[UIView alloc] init];
-	selectionColor.backgroundColor =[UIColor colorWithRed:0.18 green:0.18 blue:0.18 alpha:1];
+	selectionColor.backgroundColor =[UIColor colorWithRed:0.608 green:0 blue:0 alpha:1];
     cell.selectedBackgroundView = selectionColor;
 	
 	
