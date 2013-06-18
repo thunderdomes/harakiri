@@ -189,6 +189,7 @@
 		D0425208177070EB000C348B /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0425205177070EB000C348B /* JASidePanelController.m */; };
 		D0425209177070EB000C348B /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0425207177070EB000C348B /* UIViewController+JASidePanel.m */; };
 		D042520C17707267000C348B /* leftwindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D042520B17707267000C348B /* leftwindowViewController.m */; };
+		D042520E17707B4D000C348B /* leftWindow.plist in Resources */ = {isa = PBXBuildFile; fileRef = D042520D17707B4D000C348B /* leftWindow.plist */; };
 		F1071D501740880B00DDEE18 /* pam-ipad-nasabah-fundfact-button-04-217x30.png in Resources */ = {isa = PBXBuildFile; fileRef = F1071D4F1740880B00DDEE18 /* pam-ipad-nasabah-fundfact-button-04-217x30.png */; };
 		F1071D521740884900DDEE18 /* pam-ipad-nasabah-unduhform-tabel-439x253.png in Resources */ = {isa = PBXBuildFile; fileRef = F1071D511740884900DDEE18 /* pam-ipad-nasabah-unduhform-tabel-439x253.png */; };
 		F1109BBE1720E726000B945D /* pam-ipad-login-06-392x304.png in Resources */ = {isa = PBXBuildFile; fileRef = F1109BBD1720E726000B945D /* pam-ipad-login-06-392x304.png */; };
@@ -735,6 +736,7 @@
 		D0425207177070EB000C348B /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
 		D042520A17707267000C348B /* leftwindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftwindowViewController.h; sourceTree = "<group>"; };
 		D042520B17707267000C348B /* leftwindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftwindowViewController.m; sourceTree = "<group>"; };
+		D042520D17707B4D000C348B /* leftWindow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = leftWindow.plist; sourceTree = "<group>"; };
 		F1071D4F1740880B00DDEE18 /* pam-ipad-nasabah-fundfact-button-04-217x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-nasabah-fundfact-button-04-217x30.png"; sourceTree = "<group>"; };
 		F1071D511740884900DDEE18 /* pam-ipad-nasabah-unduhform-tabel-439x253.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-nasabah-unduhform-tabel-439x253.png"; sourceTree = "<group>"; };
 		F1109BBD1720E726000B945D /* pam-ipad-login-06-392x304.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pam-ipad-login-06-392x304.png"; sourceTree = "<group>"; };
@@ -1567,6 +1569,7 @@
 			children = (
 				F166825A171A570200C0D312 /* PAM-Guide-Info.plist */,
 				F166825B171A570200C0D312 /* InfoPlist.strings */,
+				D042520D17707B4D000C348B /* leftWindow.plist */,
 				F166825E171A570200C0D312 /* main.m */,
 				F1668260171A570200C0D312 /* PAM-Guide-Prefix.pch */,
 				F1668264171A570200C0D312 /* Default.png */,
@@ -2552,6 +2555,7 @@
 				263F4A701766E567002B3DE4 /* NewsCell_iPhone.xib in Resources */,
 				263F4A781767039C002B3DE4 /* pam-iphone5-bg-01-320x568.png in Resources */,
 				263F4A7A17672552002B3DE4 /* pam-ipad-button-hitung-124x42.png in Resources */,
+				D042520E17707B4D000C348B /* leftWindow.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

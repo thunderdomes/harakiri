@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface leftwindowViewController : UIViewController
-
+@interface leftwindowViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
+	UITableView *leftMenu;
+	
+}
+@property (nonatomic, retain) NSArray *arrayOriginal;
+@property (nonatomic, retain) NSMutableArray *arForTable;
 @end
