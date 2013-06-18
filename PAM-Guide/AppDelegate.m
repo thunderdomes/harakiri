@@ -28,7 +28,7 @@
 	self.viewControllers.leftPanel=[[leftwindowViewController alloc]init];
         self.window.rootViewController = self.viewControllers;
     [self.window makeKeyAndVisible];
-	self.viewControllers.leftFixedWidth = 275;
+	self.viewControllers.leftFixedWidth = 375;
     return YES;
 }
 

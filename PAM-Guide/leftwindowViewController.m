@@ -20,7 +20,7 @@
     if (self) {
 		self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"pam-iphone5-bg-01-320x568"]];
 		
-		leftMenu=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 275, self.view.frame.size.height-300)];
+		leftMenu=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, self.view.frame.size.height-300)];
 		leftMenu.backgroundColor=[UIColor clearColor];
 		leftMenu.separatorColor=[UIColor colorWithRed:0 green:0.314 blue:0.357 alpha:1];
 		leftMenu.delegate=self;
@@ -48,7 +48,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-	UILabel *label_top=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 275, 45)];
+	UILabel *label_top=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 375, 45)];
 	label_top.backgroundColor=[UIColor clearColor];
 	label_top.text=@"MENU";
 	label_top.textColor=[UIColor whiteColor];
