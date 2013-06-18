@@ -52,10 +52,18 @@
     return self;
 }
 -(void)mitra{
+	NSString *notificationName = @"MTPostNotificationTut";
+    NSString *key = @"OrientationStringValue";
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"mitra" forKey:key];
+    [[NSNotificationCenter defaultCenter] postNotificationName:notificationName object:nil userInfo:dictionary];
 		[self.sidePanelController showCenterPanel:YES];
 
 }
 -(void)nasabah{
+	NSString *notificationName = @"MTPostNotificationTut";
+    NSString *key = @"OrientationStringValue";
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"nasabah" forKey:key];
+    [[NSNotificationCenter defaultCenter] postNotificationName:notificationName object:nil userInfo:dictionary];
 		[self.sidePanelController showCenterPanel:YES];
 
 }

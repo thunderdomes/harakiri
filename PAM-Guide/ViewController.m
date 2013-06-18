@@ -49,6 +49,12 @@
                                                  selector:@selector(closefader)
                                                      name:@"closefader"
                                                    object:nil];
+		NSString *notificationName = @"MTPostNotificationTut";
+		[[NSNotificationCenter defaultCenter]
+		 addObserver:self
+		 selector:@selector(useNotificationWithString:)
+		 name:notificationName
+		 object:nil];
 
       //  [[NSNotificationCenter defaultCenter] removeObserver:self name:@"vcRadioButtonItemFromGroupSelected" object:nil];
         
@@ -171,7 +177,18 @@
 
 
 }
-
+- (void)useNotificationWithString:(NSNotification *)notification //use notification method and logic
+{
+    NSString *key = @"OrientationStringValue";
+    NSDictionary *dictionary = [notification userInfo];
+    NSString *stringValueToUse = [dictionary valueForKey:key];
+    if([stringValueToUse isEqualToString:@"nasabah"]){
+		[self openLogin:nil];
+	}
+	else if([stringValueToUse isEqualToString:@"mitra"]){
+		[self openLoginMitra:nil];
+	}
+}
 
 - (IBAction)openLogin:(id)sender{
 	NSLog(@"openLogin");
