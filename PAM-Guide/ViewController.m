@@ -29,6 +29,8 @@
 #import "UIViewController+JTRevealSidebarV2.h"
 #import "UINavigationItem+JTRevealSidebarV2.h"
 #import "SidebarViewController.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 
 
 @interface ViewController ()
@@ -62,7 +64,9 @@
     return self;
 }
 
-
+-(void)a{
+	[self.sidePanelController showLeftPanel:YES];
+}
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 

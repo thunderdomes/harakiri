@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "JASidePanelController.h"
 #import "MainViewController.h"
+#import "HasilInvestasiViewController.h"
 #import "leftwindowViewController.h"
 #define kObserver @"vcRadioButtonItemFromGroupSelected"
 
@@ -20,18 +21,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setCenter:)
+												name:@"dealNotification"
+											  object:nil];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        self.viewControllers = [[JASidePanelController alloc] init];
-		
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
-		self.viewControllers.centerPanel = self.viewController;
+	self.viewControllers = [[JASidePanelController alloc] init];
+	[self setCenter:nil];
 	self.viewControllers.leftPanel=[[leftwindowViewController alloc]init];
-        self.window.rootViewController = self.viewControllers;
+	self.window.rootViewController = self.viewControllers;
     [self.window makeKeyAndVisible];
 	self.viewControllers.leftFixedWidth = 375;
     return YES;
 }
-
+-(void)setCenter:(NSNotification *)name{
+	NSMutableArray *dict = (NSMutableArray*)name.object;
+	if(name==nil){
+		self.viewControllers.centerPanel = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+	}
+	else if([[dict objectAtIndex:0] isEqualToString:@"Hasil Investasi"]){
+		self.viewControllers.centerPanel = [[HasilInvestasiViewController alloc]init];
+	
+	}
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -40,7 +51,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

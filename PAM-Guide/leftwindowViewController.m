@@ -138,7 +138,7 @@
 	
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	//UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 	NSString *cellValue = [[self.arForTable objectAtIndex:indexPath.row]objectForKey:@"name"];
 		//[self jumper:cell.textLabel.text];
 	NSDictionary *d=[self.arForTable objectAtIndex:indexPath.row];
@@ -178,7 +178,15 @@
 			
 		}
 	}
-	
+	NSMutableArray *datapass=[[NSMutableArray alloc]init];
+	if([cell.textLabel.text isEqualToString:@"Hasil Investasi"]){
+		[datapass addObject:@"Hasil Investasi"];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"dealNotification" object:datapass];
+		
+		[self.sidePanelController showCenterPanel:YES];
+		[datapass removeAllObjects];
+		NSLog(@"1");
+	}
 	
 	
 	
